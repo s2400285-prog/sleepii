@@ -1,0 +1,742 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --pink: #ff7884;
+  --light-pink: #fff3f5;
+  --dark-red: #941321;
+  --soft-red: #e95e70;
+  --text: #68464a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fff5f6;
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font-family: inherit;
+}
+
+.heading {
+  text-align: center;
+  padding: 25px 15px 18px;
+}
+
+.heading p {
+  color: var(--soft-red);
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 7px;
+}
+
+.heading h1 {
+  color: #25191b;
+  font-size: 23px;
+  margin-bottom: 5px;
+}
+
+.heading span {
+  font-size: 11px;
+  color: #98777a;
+}
+
+/* MAIN CARD */
+
+.landing {
+  width: 90%;
+  max-width: 1180px;
+  margin: auto;
+  background: white;
+  box-shadow: 5px 6px 0 #eadcdd;
+  overflow: hidden;
+}
+
+/* NAVBAR: MUSIC BUTTON ALWAYS VISIBLE */
+
+.navbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 5%;
+  position: relative;
+  z-index: 10;
+  background: #ffffff;
+}
+
+.logo {
+  color: var(--dark-red);
+  font-family: "DM Serif Display", serif;
+  font-size: 29px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--pink);
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--soft-red);
+  font-size: 11px;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--dark-red);
+}
+
+.music-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: none;
+  border-radius: 25px;
+  background: var(--dark-red);
+  color: white;
+  padding: 11px 15px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  position: relative;
+  z-index: 11;
+  transition: 0.3s;
+}
+
+.music-button:hover {
+  background: var(--pink);
+  transform: translateY(-2px);
+}
+
+/* HERO */
+
+.hero {
+  min-height: 370px;
+  padding: 25px 5% 35px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  position: relative;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48%;
+  height: 330px;
+  background: var(--pink);
+  border-radius: 0 0 0 100px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-text {
+  padding-top: 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--dark-red);
+  color: white;
+  padding: 7px 13px;
+  border-radius: 25px;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+}
+
+.script {
+  font-family: "Playball", cursive;
+  font-weight: 400;
+}
+
+.greeting {
+  color: var(--pink);
+  font-size: 43px;
+  margin-top: 13px;
+  line-height: 1.2;
+}
+
+.hero h2 {
+  color: var(--dark-red);
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(31px, 3.8vw, 49px);
+  line-height: 1.08;
+}
+
+.hero h2 span {
+  color: var(--pink);
+}
+
+.description {
+  max-width: 370px;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #ad6a72;
+  margin: 15px 0 20px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.primary-btn {
+  display: inline-block;
+  border: none;
+  border-radius: 30px;
+  background: var(--dark-red);
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.primary-btn:hover {
+  background: var(--pink);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px #e95e7040;
+}
+
+.secondary-btn {
+  border: none;
+  background: transparent;
+  color: var(--dark-red);
+  cursor: pointer;
+  font-size: 11px;
+  padding: 10px;
+}
+
+.secondary-btn:hover {
+  color: var(--pink);
+}
+
+.date {
+  color: var(--dark-red);
+  font-family: "DM Serif Display", serif;
+  font-size: 14px;
+  margin-top: 22px;
+}
+
+/* PHOTO */
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.photo-frame {
+  width: min(270px, 80%);
+  aspect-ratio: 1 / 1;
+  border: 7px solid white;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #ffe1e5;
+  box-shadow: 0 10px 25px #94132120;
+}
+
+.couple-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #ffe1e5;
+  border-radius: 50%;
+}
+
+.photo-caption {
+  color: var(--dark-red);
+  font-family: "DM Serif Display", serif;
+  margin-top: 13px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.heart {
+  position: absolute;
+  color: white;
+  font-size: 32px;
+  animation: floatHeart 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.heart1 {
+  top: 3%;
+  left: 7%;
+  color: var(--pink);
+}
+
+.heart2 {
+  top: 4%;
+  right: 1%;
+  font-size: 40px;
+  animation-delay: 0.5s;
+}
+
+.heart3 {
+  bottom: 20%;
+  left: 5%;
+  color: var(--dark-red);
+  animation-delay: 1s;
+}
+
+/* BOTTOM ROW */
+
+.bottom-info {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 12px 5%;
+}
+
+.bottom-info span {
+  color: var(--pink);
+  font-size: 15px;
+}
+
+.bottom-info p {
+  font-size: 11px;
+  color: var(--dark-red);
+}
+
+.bottom-info button {
+  margin-left: auto;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: #ffe1e5;
+  color: var(--dark-red);
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.bottom-info button:hover {
+  transform: scale(1.15);
+  background: var(--pink);
+  color: white;
+}
+
+/* LOVE LETTER */
+
+.letter-section {
+  max-width: 850px;
+  padding: 0 25px;
+  margin: 75px auto;
+  text-align: center;
+}
+
+.section-label {
+  color: var(--soft-red);
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.letter-section h2 {
+  font-size: 43px;
+  color: var(--dark-red);
+  margin: 10px 0 25px;
+}
+
+.letter {
+  position: relative;
+  text-align: left;
+  padding: clamp(25px, 5vw, 50px);
+  background: #fffdfc;
+  border: 1px solid #ffe1e5;
+  box-shadow: 0 12px 35px #9413210d;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 2;
+}
+
+.letter h3 {
+  font-family: "DM Serif Display", serif;
+  font-size: 23px;
+  color: var(--dark-red);
+  margin-bottom: 20px;
+}
+
+.letter p {
+  margin-bottom: 18px;
+}
+
+.stamp {
+  float: right;
+  border: 1px dashed var(--pink);
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 9px;
+  line-height: 1.3;
+  color: var(--soft-red);
+  transform: rotate(9deg);
+  margin: 0 0 15px 15px;
+}
+
+.signoff {
+  color: var(--dark-red);
+  padding-top: 10px;
+}
+
+.signoff .script {
+  display: inline-block;
+  color: var(--pink);
+  font-size: 25px;
+  margin-top: 5px;
+}
+
+/* BIBLE VERSE */
+
+.prayer-section {
+  max-width: 800px;
+  padding: 0 25px;
+  margin: 75px auto;
+  text-align: center;
+}
+
+.prayer-section h2 {
+  font-family: "DM Serif Display", serif;
+  font-size: 30px;
+  color: var(--dark-red);
+  margin: 12px 0 25px;
+}
+
+.verse-card {
+  background: #ffe7ea;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.quote-mark {
+  color: var(--pink);
+  font-family: Georgia, serif;
+  font-size: 60px;
+  line-height: 0.8;
+}
+
+.verse {
+  color: var(--dark-red);
+  font-family: "DM Serif Display", serif;
+  font-size: 22px;
+  line-height: 1.6;
+  margin: 12px 0;
+}
+
+.reference {
+  color: var(--soft-red);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.verse-note {
+  color: #89575d;
+  font-size: 12px;
+  line-height: 1.9;
+  margin-top: 18px;
+}
+
+.prayer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+
+.outline-btn {
+  border: 1px solid #d88b93;
+  border-radius: 30px;
+  padding: 12px 20px;
+  background: transparent;
+  color: var(--dark-red);
+  cursor: pointer;
+  font-size: 11px;
+  transition: 0.3s;
+}
+
+.outline-btn:hover {
+  background: #ffe1e5;
+  transform: translateY(-2px);
+}
+
+.reveal-box {
+  display: none;
+  max-width: 620px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border: 1px dashed var(--pink);
+  border-radius: 10px;
+  color: var(--dark-red);
+  font-size: 12px;
+  line-height: 1.9;
+  text-align: left;
+}
+
+.reveal-box.show {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+/* FOOTER */
+
+footer {
+  background: #ffe7ea;
+  text-align: center;
+  padding: 25px 15px;
+  color: #9d5b63;
+  font-size: 11px;
+  line-height: 2;
+}
+
+/* TOAST NOTIFICATION */
+
+.toast {
+  position: fixed;
+  z-index: 100;
+  bottom: 25px;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  opacity: 0;
+  pointer-events: none;
+  background: var(--dark-red);
+  color: white;
+  padding: 13px 20px;
+  border-radius: 30px;
+  font-size: 12px;
+  text-align: center;
+  width: max-content;
+  max-width: 90%;
+  transition: 0.3s;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* FLOATING HEARTS */
+
+.heart-pop {
+  position: fixed;
+  z-index: 99;
+  pointer-events: none;
+  font-size: 23px;
+  animation: heartUp 1.8s ease-out forwards;
+}
+
+@keyframes floatHeart {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-8deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(8deg);
+  }
+}
+
+@keyframes heartUp {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.5);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-150px) scale(1.5) rotate(20deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TABLET AND MOBILE */
+
+@media (max-width: 900px) {
+  .navbar {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  .nav-links {
+    order: 3;
+    grid-column: 1 / -1;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .music-button {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 650px) {
+  .landing {
+    width: 94%;
+  }
+
+  .navbar {
+    padding: 17px 5%;
+    gap: 14px;
+  }
+
+  .logo {
+    font-size: 25px;
+  }
+
+  .music-button {
+    padding: 10px 12px;
+    font-size: 10px;
+  }
+
+  .nav-links {
+    gap: 24px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 20px 7% 35px;
+  }
+
+  .hero::before {
+    top: 300px;
+    right: 0;
+    width: 100%;
+    height: 360px;
+    border-radius: 80px 0 0 0;
+  }
+
+  .greeting {
+    font-size: 39px;
+  }
+
+  .hero h2 {
+    font-size: 38px;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+
+  .hero-image {
+    margin-top: 35px;
+  }
+
+  .photo-frame {
+    width: min(270px, 78%);
+  }
+
+  .heart1 {
+    left: 8%;
+    top: 20%;
+  }
+
+  .heart2 {
+    right: 5%;
+    top: 15%;
+  }
+
+  .heart3 {
+    left: 8%;
+    bottom: 18%;
+  }
+
+  .letter-section,
+  .prayer-section {
+    margin: 50px auto;
+    padding: 0 16px;
+  }
+
+  .letter-section h2 {
+    font-size: 36px;
+  }
+
+  .letter {
+    padding: 25px 20px;
+    font-size: 12px;
+  }
+
+  .letter h3 {
+    font-size: 21px;
+  }
+
+  .verse-card {
+    padding: 23px 18px;
+  }
+
+  .verse {
+    font-size: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
